@@ -1,0 +1,85 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          Int           @id @default(autoincrement())
+  name        String
+  email       String        @unique
+  password    String        // Hashed password
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  profile     Profile?
+}
+
+model Profile {
+  id          Int       @id @default(autoincrement())
+  userId      Int       @unique
+  title       String    // e.g. "Software Engineer"
+  bio         String
+  profilePic  String?   // Image URL
+  location    String?
+  resumeUrl   String?   // CV URL
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  user        User      @relation(fields: [userId], references: [id])
+}
+
+model Project {
+  id          Int       @id @default(autoincrement())
+  title       String
+  description String
+  techStack   String    // Comma-separated values like: "React,Node.js,MySQL"
+  githubUrl   String?
+  liveUrl     String?
+  imageUrl    String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  // Removed userId relation here
+}
+
+model Experience {
+  id          Int       @id @default(autoincrement())
+  company     String
+  role        String
+  description String
+  startDate   DateTime
+  endDate     DateTime?
+  location    String?
+  createdAt   DateTime  @default(now())
+}
+
+model Education {
+  id          Int       @id @default(autoincrement())
+  institution String    // e.g. "University of XYZ"
+  degree      String    // e.g. "B.Sc in Computer Science"
+  field       String    // e.g. "Software Engineering"
+  grade       String?   // e.g. "CGPA: 3.75"
+  startDate   DateTime
+  endDate     DateTime?
+  description String?
+  createdAt   DateTime  @default(now())
+
+}
+
+model Skill {
+  id        Int       @id @default(autoincrement())
+  name      String
+  level     String    // e.g. Beginner, Intermediate, Expert
+}
+
+model ContactMessage {
+  id        Int       @id @default(autoincrement())
+  name      String
+  email     String
+  message   String
+  read      Boolean   @default(false)
+  createdAt DateTime  @default(now())
+}
