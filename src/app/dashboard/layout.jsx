@@ -41,6 +41,17 @@ export default function DashboardLayout({ children }) {
               Profile
             </Link>
           </li>
+
+          <li>
+            <Link
+              href="/dashboard/projects"
+              className={`block p-2 rounded hover:bg-gray-700 ${
+                pathname === '/dashboard/projects' ? 'bg-gray-700' : ''
+              }`}
+            >
+              Projects
+            </Link>
+          </li>
         </ul>
       </aside>
 
