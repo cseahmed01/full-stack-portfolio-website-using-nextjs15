@@ -36,7 +36,7 @@ export default function AboutSection() {
 
             <div className="space-y-4 text-gray-600 dark:text-gray-300">
               <p>
-                I'm a <span className="font-semibold text-blue-600 dark:text-blue-400">Backend Developer</span> with strong experience in PHP OOP, MySQL, and Linux server environments. I have a proven track record of building robust server-side applications and deploying them reliably on production systems.
+                I'm a <span className="font-semibold text-blue-600 dark:text-blue-400">Backend Developer</span> with strong experience in PHP OOP, MySQL, and Linux server environments. I also work confidently with <span className="font-semibold">Laravel, CodeIgniter, JavaScript, React, and Next.js</span>, giving me full-stack flexibility.
               </p>
 
               <p>
@@ -47,6 +47,7 @@ export default function AboutSection() {
                 I'm perceived as versatile, unconventional, and committed. I'm always seeking new and interesting programming challenges where I can apply my skills, work collaboratively, and deliver impactful solutions.
               </p>
             </div>
+
 
             <div className="grid grid-cols-2 gap-4 pt-4">
               <div className="flex items-center gap-3">
@@ -76,16 +77,16 @@ export default function AboutSection() {
             className="relative"
           >
             <div className="aspect-w-1 aspect-h-1 bg-gray-100 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-              <img 
-                src="/images/developer-working.jpg" 
-                alt="Developer working" 
+              <img
+                src="/images/developer-working.jpg"
+                alt="Developer working"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-500 rounded-xl shadow-lg border-4 border-white dark:border-gray-900 overflow-hidden">
-              <img 
-                src="/images/coding-screen.jpg" 
-                alt="Code screen" 
+              <img
+                src="/images/coding-screen.jpg"
+                alt="Code screen"
                 className="w-full h-full object-cover"
               />
             </div>
