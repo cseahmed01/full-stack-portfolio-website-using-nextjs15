@@ -14,3 +14,16 @@ export async function GET() {
     return NextResponse.json({ error: 'Failed to load experiences' }, { status: 500 });
   }
 }
+
+export async function POST(req) {
+  try {
+    const body = await req.json();
+    const newExperience = await prisma.experience.create({
+      data: body,
+    });
+    return NextResponse.json(newExperience, { status: 201 });
+  } catch (error) {
+    console.error('Error creating experience:', error);
+    return NextResponse.json({ error: 'Failed to create experience' }, { status: 500 });
+  }
+}

@@ -52,6 +52,41 @@ export default function DashboardLayout({ children }) {
               Projects
             </Link>
           </li>
+
+          <li>
+            <Link
+              href="/dashboard/skills"
+              className={`block p-2 rounded hover:bg-gray-700 ${
+                pathname === '/dashboard/skills' ? 'bg-gray-700' : ''
+              }`}
+            >
+              Skills
+            </Link>
+          </li>
+
+
+          <li>
+            <Link
+              href="/dashboard/experience"
+              className={`block p-2 rounded hover:bg-gray-700 ${
+                pathname === '/dashboard/experience' ? 'bg-gray-700' : ''
+              }`}
+            >
+              Experinec
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              href="/dashboard/education"
+              className={`block p-2 rounded hover:bg-gray-700 ${
+                pathname === '/dashboard/education' ? 'bg-gray-700' : ''
+              }`}
+            >
+              Education
+            </Link>
+          </li>
+
         </ul>
       </aside>
 

@@ -14,4 +14,24 @@ export async function GET() {
 }
 
 
+export async function POST(req) {
+  try {
+    const body = await req.json();
+    const project = await prisma.project.create({
+      data: {
+        title: body.title,
+        description: body.description,
+        techStack: body.techStack,
+        githubUrl: body.githubUrl,
+        liveUrl: body.liveUrl,
+        imageUrl: body.imageUrl,
+      },
+    });
+    return NextResponse.json(project);
+  } catch (error) {
+    console.error('POST /api/projects error:', error);
+    return NextResponse.json({ error: 'Failed to create project' }, { status: 500 });
+  }
+}
+
  
